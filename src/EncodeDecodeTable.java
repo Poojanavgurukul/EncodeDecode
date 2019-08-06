@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class EncodeTable {
+public class EncodeDecodeTable {
     public static List<String> table=new ArrayList<>();
     public static List<String> generateBinaryTable(){
         for (int i = 0; i < 256; i++) {
