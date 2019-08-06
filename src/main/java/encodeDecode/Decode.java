@@ -1,13 +1,27 @@
 package encodeDecode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Decode {
-    public String decoder(List<String> encodedData, List<String> table){
+    public String decoder(String encodedData, List<String> table){
         StringBuilder decodedData= new StringBuilder();
-        for (String encodedElement:encodedData) {
-            decodedData.append((char) table.indexOf(encodedElement));
+        List<String> encoded = convertStringToList(encodedData);
+        for (String data : encoded) {
+            decodedData.append((char) table.indexOf(data));
         }
         return decodedData.toString();
+    }
+    private List<String> convertStringToList(String encodedData) {
+        String data = "";
+        List<String> encoded = new ArrayList<>();
+        for (int i = 0; i < encodedData.length(); i++) {
+            data += encodedData.charAt(i);
+            if (data.length() == 8) {
+                encoded.add(data);
+                data = "";
+            }
+        }
+        return encoded;
     }
 }

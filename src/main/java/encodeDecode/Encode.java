@@ -1,13 +1,11 @@
 package encodeDecode;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Encode {
-    public List<String> encoder(String userInput, List<String>table){
-        List<String>encodedData= new ArrayList<>();
+    public String encoder(String userInput, List<String>table){
+        String encodedData= "";
         for (int i = 0; i <userInput.length() ; i++) {
-            encodedData.add(table.get((int) userInput.charAt(i)));
+            encodedData+=table.get((int) userInput.charAt(i));
         }
         return encodedData;
     }
