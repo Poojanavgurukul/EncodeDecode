@@ -1,11 +1,13 @@
 package encodeDecode;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EncodeDecodeTable {
-    public static List<String> table=new ArrayList<>();
-    public static List<String> generateBinaryTable(){
+    public static Map<Integer,String> table=new HashMap<>();
+    public static Map<Integer,String> generateBinaryTable(){
         for (int i = 0; i < 256; i++) {
             String binaryNumber= Integer.toBinaryString(i);
             StringBuilder zero=new StringBuilder();
@@ -13,7 +15,7 @@ public class EncodeDecodeTable {
                zero.append("0");
             }
             zero.append(binaryNumber);
-            table.add(zero.toString());
+            table.put(i,zero.toString());
         }
         return table;
     }
