@@ -1,12 +1,13 @@
 package encodeDecode;
-import java.io.FileWriter;
+import java.io.File;
+import java.io.FileOutputStream;
 
 public class WriterEncode {
     public void  writer(byte[] data){
-        try {
-            FileWriter fileWriter=new FileWriter("encodedMessages.txt");
-            fileWriter.write(String.valueOf(data));
-            fileWriter.close();
+        File file = new File("encodedMessages.txt");
+        try(FileOutputStream fileOutputStream= new FileOutputStream(file))
+        {
+            fileOutputStream.write(data);
         }catch (Exception e){
             System.out.println(e);
         }
