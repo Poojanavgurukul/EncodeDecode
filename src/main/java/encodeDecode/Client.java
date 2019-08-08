@@ -1,5 +1,6 @@
 package encodeDecode;
 
+
 import java.io.IOException;
 
 public class Client {
@@ -11,11 +12,10 @@ public class Client {
         WriterDecode writerDecode =new WriterDecode();
         ReaderEncode readerEncode =new ReaderEncode();
         ReaderDecode readerDecode=new ReaderDecode();
-        String encodedData = encode.encoder(userInput, EncodeDecodeTable.generateBinaryTable());
-        String decodeData = decode.decoder(encodedData, EncodeDecodeTable.generateBinaryTable());
-        writerEncode.writer(encodedData);
-        writerDecode.write(decodeData);
-        System.out.println(readerEncode.read());
+        byte[] userInputEncoded = encode.encoder(userInput, EncodeDecodeTable.generateBinaryTable());
+        writerEncode.writer(userInputEncoded);
+       // writerDecode.write(decodeData);
+       // System.out.println(readerEncode.read());
         readerDecode.read();
     }
 }

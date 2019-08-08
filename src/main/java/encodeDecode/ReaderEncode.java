@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class ReaderEncode {
     public  String read()throws IOException {
-            File fr=new File("encodedMessages.txt");
-            Scanner scanner = new Scanner(fr);
-            String input = scanner.next();
-            return  input;
+            File file=new File("encodedMessages.txt");
+            Scanner scanner = new Scanner(file);
+        String input = scanner.next();
+        return input;
     }
 }
