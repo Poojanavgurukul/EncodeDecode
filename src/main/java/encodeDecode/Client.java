@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Client {
     public static void main(String[] args) throws IOException {
-        String userInput = "foo";
+        String userInput = "pooja";
         Encode encode = new Encode();
         Decode decode=new Decode();
         EncodeDecodeTable table=new EncodeDecodeTable();
