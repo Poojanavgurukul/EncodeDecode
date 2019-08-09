@@ -8,7 +8,8 @@ import static org.junit.Assert.assertEquals;
 public class CharacterTest {
     @Test public void itShouldGiveTheNumberOfUniqueCharacter(){
        String character="pooja";
+       UniqueCharacter uniqueCharacter=new UniqueCharacter();
        int expected=4;
-       assertEquals(expected, UniqueCharacter.getUniqueCharacter(character).size());
+       assertEquals(expected, uniqueCharacter.getUniqueCharacter(character).size());
     }
 }
