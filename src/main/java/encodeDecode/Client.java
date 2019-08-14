@@ -15,7 +15,7 @@ public class Client {
         Writer writer=new Writer();
         ByteConverter byteConverter = new ByteConverter();
         UniqueCharacter uniqueCharacter=new UniqueCharacter();
-        String userInput=readerInput.read("/Users/pooja/encodingDecoding/encodedMessages.txt");
+        String userInput=readerInput.read("/Users/pooja/encodingDecoding/Input");
         Set<Character> uniqueCharactersSet = uniqueCharacter.getUniqueCharacter(userInput);
         int bit = bits.getBits(uniqueCharactersSet.size());
         Map<Character, String> bitsTable = bitsRepresentTableInBinary.generateTableInBinary(bit, uniqueCharactersSet);
