@@ -9,15 +9,12 @@ import static junit.framework.TestCase.assertEquals;
 
 public class EncodeDecodeTest {
    @Test public void dataShouldReadFromTheFile() throws IOException {
-        String expected="FOO";
-        String userInput = "foo";
         Encode encode=new Encode();
-        WriterEncode writerEncode=new WriterEncode();
-        ReaderEncode readerEncode=new ReaderEncode();
+        ReaderInput readerInput=new ReaderInput();
+        Writer writer =new Writer();
         EncodeDecodeTable table=new EncodeDecodeTable();
-        byte[] encodedData = encode.encoder(userInput, table.generateUpperBinaryTable());
-        writerEncode.writer(encodedData);
-        String actual=readerEncode.read();
+        String expected="POOJA";
+        String actual= readerInput.read("/Users/pooja/encodingDecoding/encodedMessages.txt");
         assertEquals(expected,actual);
     }
 }

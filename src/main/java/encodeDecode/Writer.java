@@ -2,9 +2,9 @@ package encodeDecode;
 import java.io.File;
 import java.io.FileOutputStream;
 
-public class WriterEncode {
-    public void  writer(byte[] data){
-        File file = new File("encodedMessages.txt");
+public class Writer {
+    public void  writer(byte[] data,String path){
+        File file = new File(path);
         try(FileOutputStream fileOutputStream= new FileOutputStream(file))
         {
             fileOutputStream.write(data);
